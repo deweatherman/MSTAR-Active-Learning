@@ -135,7 +135,9 @@ def encodeMSTAR(model_path, batch_size = 1000, cuda = True, use_phase = False):
     data = torch.from_numpy(data).float()
 
     #Load model
-    model = torch.load(model_path, map_location=device)
+    #model = torch.load(model_path, map_location=device)
+    model = models.CVAE().to(device)
+    model.load_state_dict(torch.load(model_path, map_location=device))
     model.eval()
     encoded_data = None
     with torch.no_grad():

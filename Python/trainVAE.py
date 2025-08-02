@@ -75,7 +75,7 @@ for epoch in range(epochs):
 
 
 #Save model
-torch.save(model, '../models/SAR10_CNNVAE.pt')
+torch.save(model.state_dict(), '../models/SAR10_CNNVAE.pt')
 
 
 
